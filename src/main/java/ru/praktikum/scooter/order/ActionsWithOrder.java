@@ -1,5 +1,6 @@
 package ru.praktikum.scooter.order;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import ru.praktikum.scooter.models.CreateOrder;
@@ -16,6 +17,7 @@ public class ActionsWithOrder {
         RestAssured.baseURI = BASE_URI;
     }
 
+    @Step("Создание заказа")
     public Response create(CreateOrder createOrder) {
         return given()
                 .header("Content-type", "application/json")
@@ -25,6 +27,7 @@ public class ActionsWithOrder {
                 .post(CREATE_URL);
     }
 
+    @Step("Получение списка заказов по номеру")
     public Response getListOfOrdersByNumber(int track) {
         return given()
                 .queryParam("t", track)

@@ -8,7 +8,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ru.praktikum.scooter.models.CreateOrder;
 import ru.praktikum.scooter.models.OrderTrack;
-import ru.praktikum.scooter.order.ActionsWithOrder;
 
 import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.apache.http.HttpStatus.SC_OK;
@@ -36,7 +35,7 @@ public class OrderTests {
     public static Object[][] getTestData() {
         return new Object[][] {
                 { new String[]{"BLACK"} },
-                { new String[]{"GREY" } },
+                { new String[]{"GREY"} },
                 { new String[]{"BLACK", "GREY"} },
                 { new String[]{} },
         };
